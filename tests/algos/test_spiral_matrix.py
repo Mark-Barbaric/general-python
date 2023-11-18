@@ -1,4 +1,4 @@
-from algos.spiral_matrix import traverse_spiral
+from src.algos.spiral_matrix import traverse_spiral
 
 
 def test_traverse_spiral():
