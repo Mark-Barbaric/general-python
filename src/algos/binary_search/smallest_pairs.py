@@ -1,7 +1,3 @@
-import sys
-import heapq
-from operator import itemgetter
-
 def kSmallestPairs(nums1: list[int], nums2: list[int], k: int) -> list[list[int]]:
 
     l = 0

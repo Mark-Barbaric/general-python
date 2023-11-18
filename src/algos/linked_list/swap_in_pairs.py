@@ -1,11 +1,8 @@
 from typing import Optional
+from src.data_structures.linked_list import LinkedList
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-        
-def swapPairs(head: Optional[ListNode]) -> Optional[ListNode]:
+
+def swapPairs(head: Optional[LinkedList]) -> Optional[LinkedList]:
     prev = None
     l = head
     r = None if not head else head.next
