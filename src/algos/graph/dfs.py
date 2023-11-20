@@ -10,12 +10,24 @@ def dfs_recursive(parent : int, u : int, graph : list[list[int]], visited : list
         dfs_recursive(u, v, graph, visited, ans)
 
 
-def dfs_iterative(parent : int, u : int, graph : list[list[int]], visited : list[bool], ans : list[list[int]]):
-    
+def dfs_iterative(u : int, graph : list[list[int]], ans : list[list[int]]):
     stack = [u]
+    parent = -1
+    visited = [False for _ in range(len(graph))]
     
-    while len(stack):
-        ...
+    while(len(stack)):
+        top = stack.pop()
+        visited[top] = True
+        
+        if parent != -1:
+            ans.append([parent, top])
+        
+        for e in graph[top]:
+            if not visited[e]:
+                stack.append(e)
+        
+        
+        parent = top
 
 
 def dfs_all_paths_from_source_to_target(u : int, target : int, graph : list[list[int]], visited : list[bool], cur : list[int], ans : list[list[int]]):
