@@ -16,3 +16,15 @@ def list_to_linked_list(nums : list[int]) -> LinkedList:
 
 def are_lists_equal(l1 : list, l2 : list) -> bool:
     assert len(l1) == len(l2) and sorted(l1) == sorted(l2)
+
+
+def adj_to_graph(adj : list[list[int]], n : int, directed = True) -> list[list[int]]:
+    graph = [[] for _ in range(n)]
+    
+    for i,j in adj:
+        graph[i].append(j)
+        
+        if not directed:
+            graph[j].append(i)
+    
+    return graph
