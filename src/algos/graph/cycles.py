@@ -11,7 +11,7 @@ def directed_graph_has_cycle(graph : list[list[int]])->bool:
         colors[u] = 1
         
         for v in graph[u]:
-            if colors[u] == 1 or dfs(v, colors, graph) == True:
+            if colors[v] == 1 or dfs(v, colors, graph) == True:
                 return True
         
         
