@@ -16,6 +16,7 @@ class DisjointSet:
             if self._root[i] == rootY:
                 self._root[i] = rootX    
     
+    
     def connected(self, x : int, y : int) -> bool:
         return self.__find(x) == self.__find(y)
     
