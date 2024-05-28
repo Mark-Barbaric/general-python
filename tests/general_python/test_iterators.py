@@ -1,4 +1,4 @@
-from src.general_python.iterators import NumbersIterator
+from src.general_python.iterators import NumbersIterator, Stack
 import pytest
 
 
@@ -30,3 +30,15 @@ def test_numbers_iterator(numbers_iterator):
     numbers_iter = iter(numbers_iterator)
     cur = next(numbers_iter)
     assert cur == 'first'
+
+
+def test_stack(simple_list):
+    st = Stack()
+    
+    for i in simple_list:
+        st.push(i)
+
+    assert st[0] == 'first'
+    it = iter(st)
+    c = next(it)
+    assert c == 'first'
