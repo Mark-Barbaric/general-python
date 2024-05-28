@@ -1,7 +1,7 @@
 from src.data_structures.linked_list import LinkedList
 
 
-def list_to_linked_list(nums : list[int]) -> LinkedList:
+def list_to_linked_list(nums : list) -> LinkedList:
     root = LinkedList(nums[0])
     head = root
     
@@ -18,7 +18,7 @@ def are_lists_equal(l1 : list, l2 : list) -> bool:
     assert len(l1) == len(l2) and sorted(l1) == sorted(l2)
 
 
-def adj_to_graph(adj : list[list[int]], n : int, directed = True) -> list[list[int]]:
+def adj_to_graph(adj : list, n : int, directed = True) -> list:
     graph = [[] for _ in range(n)]
     
     for i,j in adj:
