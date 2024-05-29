@@ -19,6 +19,8 @@ def test_print_decorator(capsys):
 
 
 def test_accepts():
+    ans = multiply(2, 3.5)
+    assert ans == 7
     with pytest.raises(AssertionError) as exception:
         _ = multiply("12", 3.2)
     assert str(exception.value) == "arg 12 does not match <class 'int'>"
