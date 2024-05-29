@@ -1,6 +1,7 @@
-## Pipenv Helpers
+# general-python
 
+## algos
 
-Spawns shell in virtual environment.
+## data structures
 
->`pipenv shell`
+## general python
