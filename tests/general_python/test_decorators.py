@@ -1,4 +1,4 @@
-from src.general_python.decorators import print_decorator
+from src.general_python.decorators import print_decorator, accepts
 import pytest
 
 
@@ -7,7 +7,18 @@ def print_hello():
     print(f"Hello")
 
 
+@accepts(int, (int, float))
+def multiply(a, b):
+    return a * b
+
+
 def test_print_decorator(capsys):
     print_hello()
     out, err = capsys.readouterr()
     assert out == 'Something was called before the function.\nHello\nSomething was called after the function.\n'
+
+
+def test_accepts():
+    with pytest.raises(AssertionError) as exception:
+        _ = multiply("12", 3.2)
+    assert str(exception.value) == "arg 12 does not match <class 'int'>"
