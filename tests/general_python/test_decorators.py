@@ -19,6 +19,8 @@ def test_print_decorator(capsys):
 
 
 def test_accepts():
+    func = multiply
+    assert func.__name__ == "multiply"
     ans = multiply(2, 3.5)
     assert ans == 7
     with pytest.raises(AssertionError) as exception:
