@@ -9,6 +9,5 @@ def print_nums():
 
 def test_timer(capsys):
     print_nums()
-    out, err = capsys.readouterr()
+    out, err = capsys.readouterr()  # noqa: E731
     assert 'Finished print_nums()' in out
-    

@@ -1,9 +1,8 @@
-
 def kthSmallest(matrix: list[list[int]], k: int) -> int:
 
-    l, r = len(matrix) - 1, len(matrix) - 1
-    up_l, up_r = l - 1, r
-    left_l, left_r = l, r - 1
+    left, right = len(matrix) - 1, len(matrix) - 1
+    up_l, up_r = left - 1, right
+    left_l, left_r = left, right - 1
 
     ans = -1
     count = (len(matrix) * len(matrix)) - k
@@ -11,10 +10,10 @@ def kthSmallest(matrix: list[list[int]], k: int) -> int:
     while count >= 0:
 
         if left_l == 0 and up_l == 0:
-            print(f"here: {l}, {r}")
+            print(f"here: {left}, {right}")
             break
 
-        ans = matrix[l][r]
+        ans = matrix[left][right]
         left_num = matrix[left_l][left_r]
         up_num = matrix[up_l][up_r]
 
@@ -23,17 +22,17 @@ def kthSmallest(matrix: list[list[int]], k: int) -> int:
         print(f"up_l {up_l} : up_r {up_r}")
 
         if left_num > up_num:
-            l = left_l
-            r = left_r
+            left = left_l
+            right = left_r
             left_r -= 1
 
             if left_r < 0:
                 left_l -= 1
                 left_r = up_r - 1
         else:
-            
-            l = up_l
-            r = up_r
+
+            left = up_l
+            right = up_r
             up_l -= 1
 
             if up_l < 0:

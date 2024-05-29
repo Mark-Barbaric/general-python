@@ -26,11 +26,11 @@ class NumbersIterator:
             _type_: _description_
         """
         self._pos += 1
-        if(self._pos < len(self._items)):
+        if self._pos < len(self._items):
             return self._items[self._pos]
         else:
             raise StopIteration
-    
+
 
 class Stack:
     def __init__(self):

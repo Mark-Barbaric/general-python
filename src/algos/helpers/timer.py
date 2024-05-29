@@ -4,6 +4,7 @@ import time
 
 
 def timer(func: Callable):
+
     @functools.wraps(func)
     def print_time(*args, **kwargs):
         start_time = time.perf_counter()
@@ -12,4 +13,5 @@ def timer(func: Callable):
         total_time = end_time - start_time
         print(f"Finished {func.__name__}() in {total_time:.4f} secs")
         return ans
+
     return print_time

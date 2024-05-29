@@ -1,23 +1,21 @@
 def kSmallestPairs(nums1: list[int], nums2: list[int], k: int) -> list[list[int]]:
-
-    l = 0
+    left = 0
     lst = []
-    
     ans = []
-    
+
     while k > 0:
-        
-        top = lst[l]
+
+        top = lst[left]
         value = top[0]
         array = top[1]
-        i = l + 1
-        
-        for i in range(l + 1, len(lst)):
-            
+        i = left + 1
+
+        for i in range(left + 1, len(lst)):
+
             new = lst[i]
             n_value = new[0]
             n_array = new[1]
-            
+
             if array != n_array:
                 ans.append([value, n_value])
                 k -= 1
@@ -25,5 +23,5 @@ def kSmallestPairs(nums1: list[int], nums2: list[int], k: int) -> list[list[int]
             if k == 0:
                 break
 
-        l+=1
+        left += 1
     return ans

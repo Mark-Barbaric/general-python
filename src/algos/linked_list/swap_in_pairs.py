@@ -4,25 +4,24 @@ from src.data_structures.linked_list import LinkedList
 
 def swapPairs(head: Optional[LinkedList]) -> Optional[LinkedList]:
     prev = None
-    l = head
-    r = None if not head else head.next
+    left = head
+    right = None if not head else head.next
 
-    while l and r:
-        cur_next = r.next
-        l.next=cur_next
-        r.next=l
+    while left and right:
+        cur_next = right.next
+        left.next = cur_next
+        right.next = left
 
         if not prev:
-            head = r
-            
-        if prev:
-            prev.next = r
-        
-        prev = l
-        l = l.next
+            head = right
 
-        if l:
-            r = l.next
-        
-    
+        if prev:
+            prev.next = right
+
+        prev = left
+        left = left.next
+
+        if left:
+            right = left.next
+
     return head

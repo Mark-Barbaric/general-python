@@ -22,8 +22,8 @@ def test_numbers_iterator_empty_list():
     numbers_iterator = NumbersIterator()
     numbers_it = iter(numbers_iterator)
     with pytest.raises(StopIteration) as exception:
-        cur = next(numbers_it)
-        assert type(exception) == StopIteration
+        cur = next(numbers_it)  # noqa: F841
+        assert isinstance(exception, StopIteration)
 
 
 def test_numbers_iterator(numbers_iterator):
@@ -34,7 +34,7 @@ def test_numbers_iterator(numbers_iterator):
 
 def test_stack(simple_list):
     st = Stack()
-    
+
     for i in simple_list:
         st.push(i)
 

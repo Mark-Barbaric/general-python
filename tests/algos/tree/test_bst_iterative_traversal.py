@@ -12,7 +12,7 @@ def test_inorder_traversal():
     root.right.left = TreeNode(6)
     ans = []
     iterative_inorder_traversal(root, ans)
-    expected_ans = [1,2,3,4,5,6,7]
+    expected_ans = [1, 2, 3, 4, 5, 6, 7]
     assert sorted(ans) == sorted(expected_ans)
 
 
@@ -22,5 +22,5 @@ def test_inorder_traversal2():
     root.right.left = TreeNode(6)
     ans = []
     iterative_inorder_traversal(root, ans)
-    expected_ans = [5,6,7]
+    expected_ans = [5, 6, 7]
     assert sorted(ans) == sorted(expected_ans)
