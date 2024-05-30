@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt
       - name: Test general_python
         run: |
-          pytest --cache-clear --cov=app test/ > pytest-coverage.txt
+          pytest --cache-clear --cov=./ --cov-report=xml
