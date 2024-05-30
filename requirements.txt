@@ -2,5 +2,5 @@ ipykernel
 numpy
 pandas
 pytest
-pytest-cov
+coverage
 flake8
