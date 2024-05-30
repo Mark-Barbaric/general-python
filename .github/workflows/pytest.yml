@@ -1,6 +1,6 @@
 name: pytest
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   test:
@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt
       - name: Test general_python
         run: |
-          pytest
+          pytest --cache-clear --cov=app test/ > pytest-coverage.txt
