@@ -25,12 +25,14 @@ jobs:
           pip install -r requirements.txt
       - name: Test general_python
         run: |
-          pytest --cache-clear --cov=./ --cov-report=xml
+          python -m coverage run -p -m pytest
+          python -m coverage report -m --skip-covered
+          python -m coverage json
       - name: Upload coverage data
         uses: actions/upload-artifact@v3
         with:
           name: coverage-data
-          path: .coverage
+          path: .coverage.*
   
   coverage:
     name: Coverage
