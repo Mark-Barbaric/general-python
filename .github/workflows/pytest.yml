@@ -26,7 +26,7 @@ jobs:
       - name: Test general_python
         run: |
           python -m coverage run -m pytest
-          python -m coverage report -m --skip-covered
+          python -m coverage report
           python -m coverage json
       - name: Upload coverage data
         uses: actions/upload-artifact@v3
