@@ -26,3 +26,8 @@ jobs:
       - name: Test general_python
         run: |
           pytest --cache-clear --cov=./ --cov-report=xml
+      - name: Upload coverage data
+        uses: actions/upload-artifacts@v3
+        with:
+          name: coverage-data
+          path: .coverage
