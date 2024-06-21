@@ -1,4 +1,4 @@
-from src.general_python.decorators import print_decorator, accepts
+from src.general_python.custom_decorators import print_decorator, accepts
 import pytest
 
 
