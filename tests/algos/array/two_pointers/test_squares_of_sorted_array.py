@@ -20,7 +20,7 @@ def test_only_negative():
     ans = return_squares(nums)
     expected_ans = [9, 16, 25]
     assert (are_lists_equal(ans, expected_ans, sort_lists=False))
-    
+
 
 def test_mixed_nums():
     nums = [-4, -1, 0, 3, 5]
@@ -31,4 +31,3 @@ def test_mixed_nums():
     ans = return_squares(nums)
     expected_ans = [0, 0, 1, 9, 16, 16, 25]
     assert (are_lists_equal(ans, expected_ans, sort_lists=False))
-    

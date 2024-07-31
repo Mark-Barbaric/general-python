@@ -24,17 +24,17 @@ def are_lists_equal(l1: list[int], l2: list[int], sort_lists=True) -> bool:
         bool: _description_
     """
     equal_length = len(l1) == len(l2)
-    
+
     if not equal_length:
         return False
-    
+
     if sort_lists:
         return sorted(l1) == sorted(l2)
     else:
         for i in range(len(l1)):
             if l1[i] != l2[i]:
                 return False
-        
+
     return True
 
 
