@@ -27,10 +27,10 @@ def return_squares(l1: list[int]) -> list[int]:
         negative_num = "None" if left < 0 else l1[left]
         positive_num = "None" if right >= len(l1) else l1[right]
 
-        if negative_num is str:
+        if isinstance(negative_num, str):
             ans[i] = positive_num ** 2
             right += 1
-        elif positive_num is str:
+        elif isinstance(positive_num, str):
             ans[i] = negative_num ** 2
             left -= 1
         else:
