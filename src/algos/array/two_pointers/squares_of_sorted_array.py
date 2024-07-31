@@ -7,21 +7,10 @@ def return_squares(l1: list[int]) -> list[int]:
     Returns:
         list[int]: _description_
     """
-    # three scenarios
-    # empty
-    # only negative
-    # only positive
-    # positive and negative - special case
-    
-    ## empty
     
     if len(l1) == 0:
         return []
     
-    ## only positive
-    if l1[0] >= 0:
-        return [i ** 2 for i in l1]
-
     i = 0
     ans = [-1 for _ in range(len(l1))]
     
@@ -35,28 +24,22 @@ def return_squares(l1: list[int]) -> list[int]:
     r = l + 1
     
     while i < len(ans):
-        negative_num = None if l < 0 else l1[l]
-        positive_num = None if r >= len(l1) else l1[r]
+        negative_num = "None" if l < 0 else l1[l]
+        positive_num = "None" if r >= len(l1) else l1[r]
         
-        if not negative_num:
+        if type(negative_num) == str:
             ans[i] = positive_num ** 2
             r += 1
-        elif not positive_num:
+        elif type(positive_num) == str:
             ans[i] = negative_num ** 2
             l -= 1
-        elif positive_num and negative_num:
-            if abs(positive_num) >= abs(negative_num):
+        else:
+            if positive_num == 0 or (abs(positive_num) < abs(negative_num)):
                 ans[i] = positive_num ** 2
                 r += 1
             else:
                 ans[i] = negative_num ** 2
                 l -= 1
-        
-        #ans[i] = 
-        # l-=1
-        
-        #ans[i]
-        # r += 1
         i += 1
 
     return ans
