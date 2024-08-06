@@ -20,7 +20,7 @@ def test_uneven_tree():
     vals = []
     recursive_inorder_traversal(new_root, vals)
     assert vals == [5, 3, 2, 1]
-    
+
 
 def test_full_tree():
     root = TreeNode(1)
