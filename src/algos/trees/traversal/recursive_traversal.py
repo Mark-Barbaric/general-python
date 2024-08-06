@@ -1,4 +1,4 @@
-from src.data_structures.tree.tree_node import TreeNode
+from src.data_structures.trees.tree_node import TreeNode
 from typing import Optional
 
 

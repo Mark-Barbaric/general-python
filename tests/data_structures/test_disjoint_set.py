@@ -1,4 +1,4 @@
-from src.data_structures.graph.disjoint_set import DisjointSet, DisjointSet2
+from src.data_structures.graphs.disjoint_set import DisjointSet, DisjointSet2
 
 
 def test_disjoint_set():

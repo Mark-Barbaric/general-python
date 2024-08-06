@@ -1,4 +1,4 @@
-from src.algos.graph.cycles import directed_graph_has_cycle
+from src.algos.graphs.cycles import directed_graph_has_cycle
 from tests.test_helpers import adj_to_graph
 
 

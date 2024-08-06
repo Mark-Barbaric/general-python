@@ -1,5 +1,5 @@
 from typing import Optional
-from src.data_structures.tree.tree_node import TreeNode
+from src.data_structures.trees.tree_node import TreeNode
 
 
 def iterative_inorder_traversal(root: Optional[TreeNode], ans: list[int]):

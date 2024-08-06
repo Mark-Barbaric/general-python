@@ -1,6 +1,6 @@
-from src.algos.binary_search_tree.recursive_traversal import recursive_inorder_traversal
-from src.algos.binary_search_tree.reverse_binary_Tree import reverse_tree
-from src.data_structures.tree.tree_node import TreeNode
+from src.algos.trees.traversal import recursive_inorder_traversal
+from src.algos.trees.dfs import reverse_tree
+from src.data_structures.trees.tree_node import TreeNode
 
 
 def test_reverse_tree():

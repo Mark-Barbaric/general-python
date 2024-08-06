@@ -1,4 +1,4 @@
-from src.algos.graph.dfs import dfs_all_paths_from_source_to_target, dfs_iterative, dfs_recursive
+from src.algos.graphs.dfs import dfs_all_paths_from_source_to_target, dfs_iterative, dfs_recursive
 from tests.test_helpers import adj_to_graph
 
 

@@ -1,4 +1,4 @@
-from src.algos.graph.bfs import bfs
+from src.algos.graphs.bfs import bfs
 from tests.test_helpers import adj_to_graph
 
 
