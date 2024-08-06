@@ -1,5 +1,5 @@
 from src.algos.trees.traversal import recursive_inorder_traversal
-from src.algos.trees.dfs.easy_algos import reverse_tree
+from src.algos.trees.dfs import reverse_tree
 from src.data_structures.trees.tree_node import TreeNode
 
 

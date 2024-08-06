@@ -1,5 +1,5 @@
 from src.data_structures.trees import TreeNode
-from src.algos.trees.dfs.easy_algos import max_depth
+from src.algos.trees.dfs import max_depth
 
 
 def test_null_root():

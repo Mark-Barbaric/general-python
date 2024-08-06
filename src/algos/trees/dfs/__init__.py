@@ -1,1 +1,2 @@
-from .easy_algos import reverse_tree
+from .reversal import reverse_tree, invert_tree
+from .tree_depth import max_depth, min_depth
