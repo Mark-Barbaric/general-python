@@ -47,6 +47,38 @@ def valid_path_in_bidirection_graph(n: int, edges: list[list[int]], source: int,
     return dfs(source, visited, adj, destination)
 
 
+# TODO: optimize
+def find_the_town_judge(n: int, trust: list[list[int]]) -> int:
+
+    if trust == [] and n == 1:
+        return 1
+
+    if trust == [] and n > 1:
+        return -1
+
+    adj = [[] for _ in range(n)]
+
+    for t in trust:
+        adj[t[0] - 1].append(t[1] - 1)
+
+    possible_judges = [i for i, a in enumerate(adj) if len(a) == 0]
+    judge_follow = {j: 0 for j in possible_judges}
+
+    if not judge_follow:
+        return -1
+
+    for t in trust:
+        town_person = t[1] - 1
+
+        if judge_follow.get(town_person, -1) != -1:
+            judge_follow[town_person] += 1
+
+            if judge_follow[town_person] == n - 1:
+                return town_person + 1
+
+    return -1
+
+
 def print_bidirectional_paths(u: int, graph: list[list[int]], n: int) -> list[list[int]]:
 
     def dfs(u: int, visited: list[int], graph: list[list[int]], cur: list[int], ans: list[list[int]]):
