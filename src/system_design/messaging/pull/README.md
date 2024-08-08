@@ -1,8 +1,10 @@
-# Pub Sub Example
+# Pull Messaging
+
+## Pub Sub Example
 
 Uses RabbitMQ to demonstrate the pub sub messaging model.
 
-## Setup
+### Setup
 
 Need to have RabbitMQ server up and running prior. Use the below command in a terminal:
 
