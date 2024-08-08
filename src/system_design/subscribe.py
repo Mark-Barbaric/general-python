@@ -1,8 +1,11 @@
 from pika import BlockingConnection, ConnectionParameters
-from publisher import Publisher
+from subscriber import Subscriber
+from queue_params import exchange_name, binding_key
 import sys
 
+
 if __name__ == '__main__':
+    
     print("main")
     connection_config = {
         'host': 'localhost',
@@ -16,5 +19,6 @@ if __name__ == '__main__':
         print(f"Failed to establish connection to RabbitMQ. Exiting")
         sys.exit()
     
-    publisher = Publisher(connection)
-    publisher.publish('my_exchange', 'nse.nify', 'data')
+    subscriber_channel1 = connection.channel()
+    subscriber1 = Subscriber(channel=subscriber_channel1, exchange=exchange_name, queue_name='subscriber_1', binding_key=binding_key)
+    subscriber1.setup()
