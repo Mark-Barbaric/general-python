@@ -14,5 +14,3 @@ class Publisher:
             body=message
         )
         print(f"Sent message {message} for {routing_key}")
-        
-        

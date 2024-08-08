@@ -7,7 +7,7 @@ class Subscriber:
         self._exchange = exchange
         self._queue_name = queue_name
         self._binding_key = binding_key
-        self._exchange_type= exchange_type
+        self._exchange_type = exchange_type
 
     def on_message(self, channel, method, properties, body):
         binding_key = method.routing_key
@@ -34,6 +34,5 @@ class Subscriber:
         try:
             self._channel.start_consuming()
             print(f"Subscriber: {self._queue_name} consuming")
-        except:
+        except RuntimeError:
             print("Error")
-        

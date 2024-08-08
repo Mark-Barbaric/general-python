@@ -13,10 +13,10 @@ if __name__ == '__main__':
     try:
         connection = BlockingConnection(ConnectionParameters('localhost'))
         print("Successfully established connection")
-    except:
-        print(f"Failed to establish connection to RabbitMQ. Exiting")
+    except RuntimeError:
+        print("Failed to establish connection to RabbitMQ. Exiting")
         sys.exit()
-    
+
     publisher_channel = connection.channel()
     publisher = Publisher(channel=publisher_channel, exchange=exchange_name)
 
