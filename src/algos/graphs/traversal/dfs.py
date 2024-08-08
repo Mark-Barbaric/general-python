@@ -33,25 +33,3 @@ def dfs_iterative(u: int,
                 stack.append(e)
 
         parent = top
-
-
-def dfs_all_paths_from_source_to_target(u: int,
-                                        target: int,
-                                        graph: list[list[int]],
-                                        visited: list[bool],
-                                        cur: list[int],
-                                        ans: list[list[int]]):
-    if visited[u]:
-        return
-
-    visited[u] = True
-    cur.append(u)
-
-    if u == target:
-        ans.append(cur.copy())
-
-    for v in graph[u]:
-        dfs_all_paths_from_source_to_target(v, target, graph, visited, cur, ans)
-
-    visited[u] = False
-    cur.pop()

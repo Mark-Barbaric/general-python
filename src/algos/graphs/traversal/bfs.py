@@ -1,4 +1,4 @@
-def bfs(u: int, graph: list[list[int]], ans=list[list[int]]):
+def bfs_iterative(u: int, graph: list[list[int]], ans=list[list[int]]):
     queue = [u]
     parent = -1
     visited = [False for _ in range(len(graph))]

@@ -1,4 +1,4 @@
-from src.algos.graphs.course_schedule import can_finish_courses
+from src.algos.graphs.cycles.course_schedule import can_finish_courses
 
 
 def test_course_schedule():
