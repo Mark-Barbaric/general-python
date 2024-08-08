@@ -72,34 +72,15 @@ def find_the_town_judge(n: int, trust: list[list[int]]) -> int:
     return -1
 
 
-def find_judge_optimized(n: int, trust: list[int]):
-    votes = [0] * n
+def find_the_town_judge_optimized(n: int, trust: list[int]):
+    votes = [0 for _ in range(n)]
 
     for t in trust:
-        u, v = t
-        votes[u-1] -= 1
+        votes[t[0] - 1] -= 1
+        votes[t[1] - 1] += 1
 
+    for t, v in enumerate(votes):
+        if v == n - 1:
+            return t + 1
 
-def print_bidirectional_paths(u: int, graph: list[list[int]], n: int) -> list[list[int]]:
-
-    def dfs(u: int, visited: list[int], graph: list[list[int]], cur: list[int], ans: list[list[int]]):
-        if visited[u]:
-            return
-
-        visited[u] = 1
-        cur.append(u)
-
-        for v in graph[u]:
-            dfs(v, visited, graph, cur, ans)
-
-        ans.append(cur.copy())
-        cur.pop()
-        visited[u] = 0
-
-    ans = []
-    visited = [0 for _ in range(n)]
-
-    for i in range(u, n):
-        dfs(i, visited, graph, [], ans)
-
-    return ans
+    return -1
