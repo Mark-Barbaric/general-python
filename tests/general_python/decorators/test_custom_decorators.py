@@ -1,4 +1,4 @@
-from src.general_python.decorators import print_decorator, accepts
+from src.general_python.decorators.custom_decorators import print_decorator, accepts
 import pytest
 
 
@@ -13,7 +13,9 @@ def multiply(a, b):
 
 
 def test_print_decorator(capsys):
-    print_hello()
+    func = print_hello
+    assert func.__name__ == 'print_hello'
+    func()
     out, err = capsys.readouterr()  # noqa: E731
     assert out == 'Something was called before the function.\nHello\nSomething was called after the function.\n'  # noqa: E501
 
@@ -21,7 +23,7 @@ def test_print_decorator(capsys):
 def test_accepts():
     func = multiply
     assert func.__name__ == "multiply"
-    ans = multiply(2, 3.5)
+    ans = func(2, 3.5)
     assert ans == 7
     with pytest.raises(AssertionError) as exception:
         _ = multiply("12", 3.2)

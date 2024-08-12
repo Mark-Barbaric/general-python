@@ -3,11 +3,12 @@ import functools
 
 
 def print_decorator(func: Callable) -> Callable:
-    def wrapper() -> Callable:
+    @functools.wraps(func)
+    def _wrapper() -> Callable:
         print("Something was called before the function.")
         func()
         print("Something was called after the function.")
-    return wrapper
+    return _wrapper
 
 
 def accepts(*types):
