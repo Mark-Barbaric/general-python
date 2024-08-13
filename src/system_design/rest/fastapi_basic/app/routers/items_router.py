@@ -19,7 +19,7 @@ def read_items():
 
 @router.get("/{item_id}")
 def read_item(item_id: str, response_model=ItemModel):
-    if fake_items_db.get(item_id, None) == None:
+    if not fake_items_db.get(item_id, None):
         raise HTTPException(status_code=404, detail=f"Item with item_id: {item_id} not found")
     else:
         return {'id': item_id, 'name': fake_items_db[item_id]['name']}
