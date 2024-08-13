@@ -1,13 +1,13 @@
 POST_DB = {
-    '001': {
+    '0001': {
         'name': 'Post 1',
         'author': 'Mark'
     },
-    '002': {
+    '0002': {
         'name': 'Post 2',
         'author': 'Mark'
     },
-    '003': {
+    '0003': {
         'name': 'Post 3',
         'author': 'Mark'
     }
