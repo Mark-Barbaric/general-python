@@ -12,7 +12,7 @@ router = APIRouter(
 fake_items_db = {'0001': {'name': 'Item1'}, '0002': {'name': 'Item2'}}
 
 
-@router.get("/", response_model=list[ItemModel])
+@router.get("", response_model=list[ItemModel])
 def read_items():
     return [{'id': k, 'name': v['name']} for k, v in fake_items_db.items()]
 
