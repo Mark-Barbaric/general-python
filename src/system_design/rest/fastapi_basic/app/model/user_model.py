@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, EmailStr, ConfigDict
+from pydantic import BaseModel, Field, EmailStr, SecretStr, SecretBytes, ConfigDict
 from uuid import UUID, uuid4
 
 
@@ -11,5 +11,6 @@ class UserModel(BaseModel):
     user_id: UUID = Field(default_factory=uuid4, frozen=True)
     user_name: str = Field(min_length=MIN_USER_NAME_LENGTH,
                            max_length=MAX_USER_NAME_LENGTH)
-    #password
+    password: SecretStr
+    password_bytes: SecretBytes
     email: EmailStr
