@@ -1,2 +1,2 @@
-from .item_model import ItemModel
+from .recipe_model import RecipeModel
 from .user_model import UserModel
