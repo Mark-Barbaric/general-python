@@ -21,4 +21,4 @@ class UserModel(BaseModel):
     password: SecretStr
     password_bytes: SecretBytes
     email: EmailStr
-    user_permissions : UserPermissions = UserPermissions.unverified_user
+    user_permissions: UserPermissions = UserPermissions.unverified_user

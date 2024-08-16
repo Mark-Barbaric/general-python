@@ -1,4 +1,4 @@
-from src.system_design.rest.fastapi_basic.app.model import UserModel
+from src.system_design.rest.fastapi_crud.app.model import UserModel
 from uuid import uuid4
 from pydantic import ValidationError, SecretStr
 import pytest
@@ -14,13 +14,12 @@ def test_valid_user_model():
     assert isinstance(user_model.email, str)
 
 
-
 def test_password_input():
     user_model = UserModel(user_id=uuid4(),
-                        user_name="markbarbaric",
-                        password="password",
-                        password_bytes=b"password_bytes",
-                        email="mark@hotmail.com")
+                           user_name="markbarbaric",
+                           password="password",
+                           password_bytes=b"password_bytes",
+                           email="mark@hotmail.com")
     assert isinstance(user_model.password, SecretStr)
 
 

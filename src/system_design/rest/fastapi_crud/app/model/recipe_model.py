@@ -9,11 +9,10 @@ class PublishStatus(Enum):
     published = 2
 
 
-
 class RecipeModel(BaseModel):
     model_config = ConfigDict(extra='forbid')
     id: UUID = Field(default_factory=uuid4, frozen=True)
     name: str
     description: str
     author: UUID = Field(default_factory=uuid4, frozen=True)
-    publish_status : PublishStatus = PublishStatus.unpublished
+    publish_status: PublishStatus = PublishStatus.unpublished

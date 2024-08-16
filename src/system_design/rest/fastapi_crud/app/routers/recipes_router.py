@@ -15,12 +15,12 @@ router = APIRouter(
 
 @router.get("", response_model=list[RecipeModel])
 def read_items() -> list[RecipeModel]:
-    return [{'id': k, 'name': v['name']} for k, v in RECIPES_DB.items()]
+    return RECIPES_DB
 
 
 @router.get("/{recipe_id}")
 def read_item(recipe_id: str) -> RecipeModel:
-    found_recipe = get_recipe_with_id(recipe_id)
+    found_recipe = get_recipe_with_id(recipe_id, RECIPES_DB)
 
     if found_recipe:
         return found_recipe
@@ -34,15 +34,15 @@ def read_item(recipe_id: str) -> RecipeModel:
 @router.put("/{recipe_id}")
 def put_item(recipe_id: str, item: RecipeModel):
     return {500, 'not implemented'}
-    
-    
+
+
 @router.patch("/recipes/{recipe_id}", response_model=RecipeModel)
 async def update_item(item_id: str, item: RecipeModel):
     return {500, 'not implemented'}
-    #stored_item_data = items[item_id]
-    #stored_item_model = Item(**stored_item_data)
-    #update_data = item.dict(exclude_unset=True)
-    #updated_item = stored_item_model.copy(update=update_data)
-    #items[item_id] = jsonable_encoder(updated_item)
-    #updated_item = stored_item_model.copy(update=update_data)
-    #return updated_item
+    # stored_item_data = items[item_id]
+    # stored_item_model = Item(**stored_item_data)
+    # update_data = item.dict(exclude_unset=True)
+    # updated_item = stored_item_model.copy(update=update_data)
+    # items[item_id] = jsonable_encoder(updated_item)
+    # updated_item = stored_item_model.copy(update=update_data)
+    # return updated_item
