@@ -1,4 +1,5 @@
 from typing import Optional
+from enum import Enum
 from ..model import RecipeModel
 from .fake_users_db import USER_DB
 
@@ -21,9 +22,17 @@ RECIPES_DB: list[RecipeModel] = [
 ]
 
 
-def get_recipe_with_id(recipe_id: str, model: list[RecipeModel]) -> Optional[RecipeModel]:
+class RecipeSearchType(Enum):
+    id = 0
+    name = 1
+
+
+def get_recipe_from_db(search_param: str,
+                       model: list[RecipeModel],
+                       search_type=RecipeSearchType.id) -> Optional[RecipeModel]:
+    key = 'id' if search_type == RecipeSearchType.id else 'name'
     for m in model:
-        if m['id'] == recipe_id:
+        if m[key] == search_param:
             return m
 
     return None

@@ -14,5 +14,5 @@ class RecipeModel(BaseModel):
     id: UUID = Field(default_factory=uuid4, frozen=True)
     name: str
     description: str
-    author: UUID = Field(default_factory=uuid4, frozen=True)
+    author: UUID = Field(frozen=True)
     publish_status: PublishStatus = PublishStatus.unpublished
