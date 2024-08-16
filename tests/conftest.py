@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from src.system_design.rest.fastapi_basic.app.main import app
+from src.system_design.rest.fastapi_crud.app.main import app
 from src.system_design.rest.flask.flask_routers.app import create_app
 
 

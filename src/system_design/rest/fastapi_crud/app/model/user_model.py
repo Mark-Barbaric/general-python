@@ -1,9 +1,16 @@
 from pydantic import BaseModel, Field, EmailStr, SecretStr, SecretBytes, ConfigDict
 from uuid import UUID, uuid4
+from enum import Enum
 
 
 MIN_USER_NAME_LENGTH = 5
 MAX_USER_NAME_LENGTH = 12
+
+
+class UserPermissions(Enum):
+    unverified_user = 0
+    verified_user = 1
+    admin = 1
 
 
 class UserModel(BaseModel):
@@ -14,3 +21,4 @@ class UserModel(BaseModel):
     password: SecretStr
     password_bytes: SecretBytes
     email: EmailStr
+    user_permissions : UserPermissions = UserPermissions.unverified_user
