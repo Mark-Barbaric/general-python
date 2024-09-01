@@ -50,4 +50,5 @@ async def main():
     print(f'total expected sleep time: {total_sleep_time:.2f} seconds')
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
