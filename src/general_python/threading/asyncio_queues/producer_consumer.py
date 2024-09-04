@@ -47,5 +47,7 @@ async def main():
     # run the producer and consumers
     await asyncio.gather(producer(queue), consumer(queue))
 
-# start the asyncio program
-asyncio.run(main())
+
+if __name__ == '__main__':
+    # start the asyncio program
+    asyncio.run(main())
