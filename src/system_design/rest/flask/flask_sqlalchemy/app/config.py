@@ -9,6 +9,6 @@ class Config:
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql:///:memory:'  # In-memory SQLite database for testing
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'  # In-memory SQLite database for testing
     TESTING = True
     WTF_CSRF_ENABLED = False  # Disable CSRF tokens in testing for simplicity
