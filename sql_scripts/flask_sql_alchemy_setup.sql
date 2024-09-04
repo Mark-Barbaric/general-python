@@ -13,7 +13,7 @@ CREATE TABLE blog_posts(
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-CREATE TABLE user_reviews(
+CREATE TABLE reviews(
     review_id VARCHAR(36) NOT NULL,
     rating FLOAT NOT NULL,
     blog_post_id VARCHAR(36) NOT NULL,
@@ -44,7 +44,7 @@ INSERT INTO blog_posts(blog_post_id, blog_post_name, user_id)
 VALUES(@blog_post_id1, 'Post 1', @user_uuid1),
 (@blog_post_id2, 'Post 2', @user_uuid1);
 
-INSERT INTO user_reviews(review_id, rating, user_id, blog_post_id)
+INSERT INTO reviews(review_id, rating, user_id, blog_post_id)
 VALUES(uuid(), 4, @user_uuid2, @blog_post_id1),
 (uuid(), 3.5, @user_uuid3, @blog_post_id1);
 

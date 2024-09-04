@@ -2,10 +2,9 @@ import argparse
 from flask import Flask
 from flask_restful import Api
 from .resources.blog_posts import BlogPostListResource, BlogPostResource
-from .resources.users import UserListResource
+from .resources.users import UserListResource, UserResource
 from .extensions import db
 from .config import Config
-
 
 
 def create_app(config_class=Config):
@@ -22,10 +21,13 @@ def create_app(config_class=Config):
     api.add_resource(UserListResource,
                      '/users',
                      resource_class_kwargs={'db': db})
+    api.add_resource(UserResource,
+                     '/users/<user_id>',
+                     resource_class_kwargs={'db': db})
     return app
 
 
-def main():    
+def main():
     parser = argparse.ArgumentParser(description='Run the Flask application.')
     parser.add_argument('--config', help='The configuration to use.')
     parser.add_argument('--host', default='127.0.0.1', help='The host to listen on.')

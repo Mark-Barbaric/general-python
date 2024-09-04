@@ -1,4 +1,4 @@
-def test_base_resource(flask_sql_alchemy_test_client):
+def test_200_response(flask_sql_alchemy_test_client):
     res = flask_sql_alchemy_test_client.get('/users')
     assert res.status_code == 200
     res_json = res.json

@@ -3,8 +3,10 @@
 from random import random
 import asyncio
 
+
 # change this to alter behavior between consumer and producer
 MAX_QUEUE_SIZE = 10
+
 
 # coroutine to generate work
 async def producer(queue):
@@ -20,7 +22,8 @@ async def producer(queue):
     # send an all done signal
     await queue.put(None)
     print('Producer: Done')
- 
+
+
 # coroutine to consume work
 async def consumer(queue):
     print('Consumer: Running')
@@ -35,13 +38,14 @@ async def consumer(queue):
         # report
     # all done
     print('Consumer: Done')
- 
+
+
 # entry point coroutine
 async def main():
     # create the shared queue
     queue = asyncio.Queue(MAX_QUEUE_SIZE)
     # run the producer and consumers
     await asyncio.gather(producer(queue), consumer(queue))
- 
+
 # start the asyncio program
 asyncio.run(main())

@@ -2,17 +2,20 @@
 # example of showing the progress of tasks using a callback
 import random
 import asyncio
- 
+
+
 # callback function to show the progress of tasks
-def progress(task):
+def progress():
     # report progress of the task
     print('.', end='')
- 
+
+
 # coroutine task
 async def work():
     # simulate effort
     await asyncio.sleep(random.random() * 10)
- 
+
+
 # main coroutine
 async def main():
     # create and schedule many tasks
@@ -24,8 +27,8 @@ async def main():
     _ = await asyncio.wait(tasks)
     # report final message
     print('\nAll done.')
- 
-# run the asyncio program
 
+
+# run the asyncio program
 if __name__ == "__main__":
     asyncio.run(main())
