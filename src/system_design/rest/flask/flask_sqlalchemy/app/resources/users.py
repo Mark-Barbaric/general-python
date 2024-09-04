@@ -8,7 +8,11 @@ class UserListResource(Resource):
 
     def get(self):
         users = self._db_session.session.query(Users).all()
-        return [user.to_dict() for user in users]
+
+        if len(users) > 0:
+            return [user.to_dict() for user in users]
+        else:
+            return []
 
 
 class UserResource(Resource):
