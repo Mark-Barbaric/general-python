@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: mysql
+    restart: always
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ../sql_scripts/flask_sql_alchemy_setup.sql:/data/application/init.sql
+      - mysql:/var/lib/mysql
+    environment: 
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_USER: 'root'
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+volumes:
+  mysql:
