@@ -6,7 +6,7 @@ def iterative_inorder_traversal(root: Optional[TreeNode], ans: list[int]):
     cur = root
     stack = []
 
-    while len(stack) or cur:
+    while len(stack) > 0 or cur:
         while cur:
             stack.append(cur)
             cur = cur.left

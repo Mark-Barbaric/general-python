@@ -7,8 +7,8 @@ def list_to_linked_list(nums: list[int]) -> LinkedList:
 
     for i in range(1, len(nums)):
         new_node = LinkedList(nums[i])
-        head.next = new_node
-        head = head.next
+        head.left_next = new_node
+        head = head.left_next
     return root
 
 
@@ -18,6 +18,6 @@ def linked_list_to_list(root: LinkedList) -> list[int]:
 
     while cur:
         ans.append(cur.val)
-        cur = cur.next
+        cur = cur.left_next
 
     return ans

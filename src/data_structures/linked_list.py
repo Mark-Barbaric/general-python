@@ -1,8 +1,8 @@
 class LinkedList:
 
-    def __init__(self, val: int, next=None):
+    def __init__(self, val: int, left_next=None):
         self._val = val
-        self.next = next
+        self.left_next = left_next
 
     @property
     def val(self):

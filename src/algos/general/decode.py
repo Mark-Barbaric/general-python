@@ -1,6 +1,7 @@
+"""_summary_"""
 def decode(message_file: str):
     try:
-        with open(message_file, 'r') as file:
+        with open(message_file, 'r', encoding='.txt') as file:
             text_lines = file.read().splitlines()
     except FileNotFoundError:
         print(f"file doesn't exist: {message_file}")
