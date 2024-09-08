@@ -9,9 +9,12 @@ SKU = TypeVar("SKU", bound=str)
 
 @dataclass(frozen=True)
 class OrderLine:
-    orderid: str
+    order_id: str
     sku: SKU
     qty: int
+
+    def __eq__(self, other):
+        return self.order_id == other.order_id
 
 
 class Batch:
