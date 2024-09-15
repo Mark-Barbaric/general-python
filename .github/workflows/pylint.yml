@@ -15,3 +15,16 @@ jobs:
           python-version: "3.11"
       - name: flake8 Lint
         uses: py-actions/flake8@v2
+  mypy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install mypy
+        run: pip install mypy
+      - name: Run mypy
+        run: python -m mypy

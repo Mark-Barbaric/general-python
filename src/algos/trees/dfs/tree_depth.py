@@ -9,7 +9,3 @@ def max_depth(root: Optional[TreeNode]) -> int:
     left_max = max_depth(root.left)
     right_max = max_depth(root.right)
     return max(left_max, right_max) + 1
-
-
-def min_depth(root: Optional[TreeNode]) -> int:
-    ...

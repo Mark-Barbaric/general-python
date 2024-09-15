@@ -1,5 +1,5 @@
 from typing import Optional
-from enum import Enum
+from enum import IntEnum
 from ..model import RecipeModel
 
 
@@ -21,7 +21,7 @@ RECIPES_DB: list[RecipeModel] = [
 ]
 
 
-class RecipeSearchType(Enum):
+class RecipeSearchType(IntEnum):
     id = 0
     name = 1
 

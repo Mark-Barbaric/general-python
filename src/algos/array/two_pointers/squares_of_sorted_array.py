@@ -34,7 +34,7 @@ def return_squares(l1: list[int]) -> list[int]:
             ans[i] = negative_num ** 2
             left -= 1
         else:
-            if positive_num == 0 or (abs(positive_num) < abs(negative_num)):
+            if positive_num == 0 or int((abs(positive_num) < abs(negative_num))):
                 ans[i] = positive_num ** 2
                 right += 1
             else:

@@ -7,12 +7,12 @@ class DisjointSet:
         return self._root[x]
 
     def union(self, x: int, y: int):
-        rootX = self.__find(x)
-        rootY = self.__find(y)
+        root_x = self.__find(x)
+        root_y = self.__find(y)
 
         for i in range(self.size):
-            if self._root[i] == rootY:
-                self._root[i] = rootX
+            if self._root[i] == root_y:
+                self._root[i] = root_x
 
     def connected(self, x: int, y: int) -> bool:
         return self.__find(x) == self.__find(y)
@@ -33,11 +33,11 @@ class DisjointSet2:
         return x
 
     def union(self, x: int, y: int):
-        rootX = self.__find(x)
-        rootY = self.__find(y)
+        root_x = self.__find(x)
+        root_y = self.__find(y)
 
-        if rootX != rootY:
-            self._root[rootY] = rootX
+        if root_x != root_y:
+            self._root[root_y] = root_x
 
     def connected(self, x: int, y: int) -> bool:
         return self.__find(x) == self.__find(y)
