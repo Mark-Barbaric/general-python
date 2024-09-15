@@ -6,14 +6,14 @@ def delete_duplicates_from_sorted_list(node: Optional[LinkedList]) -> Optional[L
     if not node:
         return None
 
-    cur = node.left_next
+    cur = node.next
     prev = node
 
     while cur:
         while cur and cur.val == prev.val:
             cur = cur.next
 
-        prev.left_next = cur
+        prev.next = cur
         prev = cur
         if cur:
             cur = cur.next

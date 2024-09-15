@@ -24,6 +24,6 @@ def sum_of_root_to_leaf_binary_numbers(root: Optional[TreeNode]) -> int:
             rest = sum([2 ** (len(cur_bits) - i - 1) for i, bit in enumerate(cur_bits[:-1]) if bit == 1])
             ans.append(rest + first_bit)
 
-    ans = []
+    ans: list[int] = []
     helper(root, [], ans)
     return sum(ans)
