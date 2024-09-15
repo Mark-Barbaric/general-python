@@ -1,4 +1,4 @@
-from src.domain_driven_design.cosmic_python.domain_modeling.model import OrderLine
+from src.domain_driven_design.cosmic_python.domain.model import OrderLine
 
 
 def test_order_line_comparison():

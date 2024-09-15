@@ -1,21 +1,7 @@
-from typing import TypeVar
-from dataclasses import dataclass
 from typing import Optional
 from datetime import date
-
-
-SKU = TypeVar("SKU", bound=str)
-
-
-@dataclass(frozen=True)
-class OrderLine:
-    order_id: str
-    sku: SKU
-    qty: int
-
-    def __eq__(self, other):
-        return self.order_id == other.order_id
-
+from ..value_objects import SKU
+from ..entities import OrderLine
 
 class Batch:
     def __init__(self,

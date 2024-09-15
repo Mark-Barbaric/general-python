@@ -60,5 +60,5 @@ def setup_test_database(flask_sql_alchemy_app, valid_user_id, valid_blog_post_id
 
 
 @pytest.fixture(scope='function')
-def flask_sql_alchemy_test_client(flask_sql_alchemy_app, setup_test_database):
+def flask_sql_alchemy_test_client(flask_sql_alchemy_app):
     return flask_sql_alchemy_app.test_client()
