@@ -1,6 +1,6 @@
 from sqlalchemy import Table, Column, Integer, String, Date, ForeignKey
 from sqlalchemy.orm import registry, relationship
-from ..domain import model
+from ..domain.entities import order_line
 
 
 mapper_registry = registry()
@@ -35,9 +35,9 @@ allocations_table = Table(
 
 
 def start_mappers():
-    lines_mapper = mapper_registry.map_imperatively(model.OrderLine, order_lines_table)
+    lines_mapper = mapper_registry.map_imperatively(order_line.OrderLine, order_lines_table)
     mapper_registry.map_imperatively(
-        model.Batch,
+        order_line.Batch,
         batches_tables,
         properties = {
             "allocations": relationship(

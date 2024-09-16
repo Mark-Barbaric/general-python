@@ -8,8 +8,8 @@ def can_finish_courses(num_courses: int, prerequisites: list[list[int]]):
     Returns:
         _type_: _description_
     """
-    colors = [0 for _ in range(num_courses)]
-    graph = [[] for _ in range(num_courses)]
+    colors: list[int] = [0 for _ in range(num_courses)]
+    graph: list[list[int]] = [[] for _ in range(num_courses)]
 
     for i, j in prerequisites:
         graph[j].append(i)

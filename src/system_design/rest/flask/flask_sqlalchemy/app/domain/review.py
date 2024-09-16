@@ -1,4 +1,4 @@
-from .model_class import Base as ModelBase
+from ..domain.model_class import Base as ModelBase
 from sqlalchemy import UUID, Column, Float, ForeignKey
 from sqlalchemy.orm import mapped_column, relationship
 

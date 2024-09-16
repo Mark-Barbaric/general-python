@@ -3,7 +3,7 @@ from flask import Flask
 from flask_restful import Api
 from .resources.blog_posts import BlogPostListResource, BlogPostResource
 from .resources.users import UserListResource, UserResource
-from .extensions import db
+from .database.db import db
 from .config import Config
 
 

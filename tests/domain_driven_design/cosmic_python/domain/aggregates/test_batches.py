@@ -1,5 +1,6 @@
 from datetime import date
-from src.domain_driven_design.cosmic_python.domain.model import Batch, OrderLine
+from src.domain_driven_design.cosmic_python.app.domain.aggregates import Batch
+from src.domain_driven_design.cosmic_python.app.domain.entities import OrderLine
 
 
 def make_batch_and_line(sku, batch_qty, line_qty):

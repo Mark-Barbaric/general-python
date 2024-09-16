@@ -1,10 +1,10 @@
 import pytest
 import uuid
 from src.system_design.rest.flask.flask_sqlalchemy.app.config import TestConfig
-from src.system_design.rest.flask.flask_sqlalchemy.app.extensions import db as _db
-from src.system_design.rest.flask.flask_sqlalchemy.app.model.users import Users
-from src.system_design.rest.flask.flask_sqlalchemy.app.model.blog_posts import BlogPosts
-from src.system_design.rest.flask.flask_sqlalchemy.app.model.review import Review
+from src.system_design.rest.flask.flask_sqlalchemy.app.database.db import db as _db
+from src.system_design.rest.flask.flask_sqlalchemy.app.domain.users import Users
+from src.system_design.rest.flask.flask_sqlalchemy.app.domain.blog_posts import BlogPosts
+from src.system_design.rest.flask.flask_sqlalchemy.app.domain.review import Review
 from src.system_design.rest.flask.flask_sqlalchemy.app import create_app
 
 
@@ -60,5 +60,5 @@ def setup_test_database(flask_sql_alchemy_app, valid_user_id, valid_blog_post_id
 
 
 @pytest.fixture(scope='function')
-def flask_sql_alchemy_test_client(flask_sql_alchemy_app):
+def flask_sql_alchemy_test_client(flask_sql_alchemy_app, setup_test_database):
     return flask_sql_alchemy_app.test_client()

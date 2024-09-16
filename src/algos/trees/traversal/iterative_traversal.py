@@ -4,7 +4,7 @@ from src.data_structures.trees.tree_node import TreeNode
 
 def iterative_inorder_traversal(root: Optional[TreeNode], ans: list[int]):
     cur = root
-    stack = []
+    stack: list[TreeNode] = []
 
     while len(stack) > 0 or cur:
         while cur:

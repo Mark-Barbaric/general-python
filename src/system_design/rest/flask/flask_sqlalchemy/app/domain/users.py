@@ -1,5 +1,5 @@
 from sqlalchemy import UUID, Column, String
-from .model_class import Base as ModelBase
+from ..domain.model_class import Base as ModelBase
 
 
 class Users(ModelBase):

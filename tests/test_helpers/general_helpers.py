@@ -24,8 +24,8 @@ def are_lists_equal(l1: list[int], l2: list[int], sort_lists=True) -> bool:
     return True
 
 
-def adj_to_graph(adj: list[int], n: int, directed=True) -> list:
-    graph = [[] for _ in range(n)]
+def adj_to_graph(adj: list[list[int]], n: int, directed=True) -> list:
+    graph: list[list[int]] = [[] for _ in range(n)]
 
     for i, j in adj:
         graph[i].append(j)

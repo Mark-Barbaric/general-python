@@ -21,7 +21,7 @@ def all_paths_from_source_to_target(u: int,
 
 
 def valid_path_in_bidirection_graph(n: int, edges: list[list[int]], source: int, destination: int) -> bool:
-    visited = [0 for _ in range(n)]
+    visited: list[int] = [0 for _ in range(n)]
 
     def dfs(u, visited, edges, target):
         if visited[u]:
@@ -38,7 +38,7 @@ def valid_path_in_bidirection_graph(n: int, edges: list[list[int]], source: int,
 
         return False
 
-    adj = [[] for _ in range(n)]
+    adj: list[list[int]] = [[] for _ in range(n)]
 
     for e in edges:
         adj[e[0]].append(e[1])
@@ -56,8 +56,8 @@ def find_the_town_judge(n: int, trust: list[list[int]]) -> int:
     if n > 1 and len(trust) == 0:
         return -1
 
-    possible_judges = {j: 0 for j in range(n)}
-    adj = [[] for _ in range(n)]
+    possible_judges: dict[int] = {j: 0 for j in range(n)}
+    adj: list[list[int]] = [[] for _ in range(n)]
 
     for t in trust:
         town_person = t[0] - 1
@@ -73,7 +73,7 @@ def find_the_town_judge(n: int, trust: list[list[int]]) -> int:
 
 
 def find_the_town_judge_optimized(n: int, trust: list[int]):
-    votes = [0 for _ in range(n)]
+    votes: list[int] = [0 for _ in range(n)]
 
     for t in trust:
         votes[t[0] - 1] -= 1
