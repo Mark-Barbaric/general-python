@@ -6,7 +6,7 @@ from src.data_structures.trees.tree_node import TreeNode
 def test_null_root():
     root = None
     new_root = invert_tree(root)
-    vals = []
+    vals : list[int] = []
     recursive_inorder_traversal(new_root, vals)
     assert vals == []
 
@@ -17,7 +17,7 @@ def test_uneven_tree():
     root.right = TreeNode(5)
     root.left.left = TreeNode(1)
     new_root = invert_tree(root)
-    vals = []
+    vals : list[int] = []
     recursive_inorder_traversal(new_root, vals)
     assert vals == [5, 3, 2, 1]
 
@@ -27,7 +27,7 @@ def test_full_tree():
     root.left = TreeNode(2)
     root.right = TreeNode(3)
     new_root = invert_tree(root)
-    vals = []
+    vals : list[int] = []
     recursive_inorder_traversal(new_root, vals)
-    expected_vals = [3, 1, 2]
+    expected_vals : list[int] = [3, 1, 2]
     assert vals == expected_vals

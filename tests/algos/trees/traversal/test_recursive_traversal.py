@@ -6,7 +6,7 @@ def test_inorder_traversal():
     root = TreeNode(5)
     root.left = TreeNode(3)
     root.right = TreeNode(7)
-    ans = []
+    ans: list[int] = []
     recursive_inorder_traversal(root, ans)
-    expected_ans = [3, 5, 7]
+    expected_ans: list[int] = [3, 5, 7]
     assert sorted(ans) == sorted(expected_ans)

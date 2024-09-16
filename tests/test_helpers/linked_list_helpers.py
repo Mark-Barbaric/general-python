@@ -1,7 +1,8 @@
+from typing import Optional
 from src.data_structures.linked_list import LinkedList
 
 
-def list_to_linked_list(nums: list[int]) -> LinkedList:
+def list_to_linked_list(nums: list[int]) -> Optional[LinkedList]:
     root = LinkedList(nums[0])
     head = root
 
@@ -12,7 +13,7 @@ def list_to_linked_list(nums: list[int]) -> LinkedList:
     return root
 
 
-def linked_list_to_list(root: LinkedList) -> list[int]:
+def linked_list_to_list(root: Optional[LinkedList]) -> list[int]:
     ans = []
     cur = root
 

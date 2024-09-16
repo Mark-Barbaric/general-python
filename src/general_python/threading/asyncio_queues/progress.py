@@ -19,10 +19,10 @@ async def worker(name, queue):
 
 async def main():
     # Create a queue that we will use to store our "workload".
-    queue = asyncio.Queue()
+    queue: asyncio.Queue = asyncio.Queue()
 
     # Generate random timings and put them into the queue.
-    total_sleep_time = 0
+    total_sleep_time = 0.0
     for _ in range(20):
         sleep_for = random.uniform(0.05, 1.0)
         total_sleep_time += sleep_for

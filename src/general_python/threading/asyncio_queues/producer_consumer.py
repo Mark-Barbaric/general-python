@@ -43,7 +43,7 @@ async def consumer(queue):
 # entry point coroutine
 async def main():
     # create the shared queue
-    queue = asyncio.Queue(MAX_QUEUE_SIZE)
+    queue: asyncio.Queue = asyncio.Queue(MAX_QUEUE_SIZE)
     # run the producer and consumers
     await asyncio.gather(producer(queue), consumer(queue))
 

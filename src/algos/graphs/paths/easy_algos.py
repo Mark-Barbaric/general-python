@@ -72,7 +72,7 @@ def find_the_town_judge(n: int, trust: list[list[int]]) -> int:
     return -1
 
 
-def find_the_town_judge_optimized(n: int, trust: list[int]):
+def find_the_town_judge_optimized(n: int, trust: list[list[int]]):
     votes: list[int] = [0 for _ in range(n)]
 
     for t in trust:
