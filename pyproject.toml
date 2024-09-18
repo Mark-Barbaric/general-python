@@ -23,10 +23,21 @@ asyncio = "^3.4.3"
 flask-sqlalchemy = "^3.1.1"
 mysql-connector-python = "^9.0.0"
 sqlalchemy = "^2.0.32"
-mysqlclient = "2.2.0"
+mysqlclient = "^2.2.4"
+flake8 = "^7.1.1"
+pyright = "^1.1.380"
 
 [tool.poetry.group.jupyter.dependencies]
 matplotlib = "^3.9.2"
+
+[tool.pyright]
+include = ["src"]
+ignore = ["**/typings"]
+exclude = [
+    ".*",
+    "__*",
+    "**/typings",
+]
 
 [build-system]
 requires = ["poetry-core"]
