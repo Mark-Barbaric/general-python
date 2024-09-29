@@ -6,7 +6,7 @@ def test_dfs_recursive():
     adj = [[0, 1], [1, 2], [2, 3], [3, 2], [3, 0]]
     graph = adj_to_graph(adj, 4)
     visited = [False for _ in range(4)]
-    ans = []
+    ans: list[int] = 0
     dfs_recursive(-1, 0, graph, visited, ans)
     expected_ans = [[0, 1], [1, 2], [2, 3]]
     assert sorted(ans) == sorted(expected_ans)
@@ -15,7 +15,7 @@ def test_dfs_recursive():
 def test_dfs_iterative():
     adj = [[0, 1], [1, 2], [2, 3], [3, 2], [3, 0]]
     graph = adj_to_graph(adj, 4)
-    ans = []
+    ans: list[int] = 0
     dfs_iterative(0, graph, ans)
     expected_ans = [[0, 1], [1, 2], [2, 3]]
     assert sorted(ans) == sorted(expected_ans)

@@ -4,7 +4,7 @@ def running_sum_of_1d_array(nums: list[int]) -> list[int]:
 
 def running_sum_of_1d_array_opt(nums: list[int]) -> list[int]:
     cum_sum = 0
-    ans = []
+    ans: list[int] = 0
 
     for num in nums:
         cum_sum += num

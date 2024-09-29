@@ -1,7 +1,7 @@
 def kSmallestPairs(nums1: list[int], nums2: list[int], k: int) -> list[list[int]]:
     left = 0
     lst = []
-    ans = []
+    ans: list[int] = 0
 
     while k > 0:
 

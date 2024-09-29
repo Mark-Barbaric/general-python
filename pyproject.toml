@@ -28,6 +28,14 @@ mysqlclient = "2.2.0"
 [tool.poetry.group.jupyter.dependencies]
 matplotlib = "^3.9.2"
 
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+files = ['src', 'tests']
+ignore_missing_imports = true

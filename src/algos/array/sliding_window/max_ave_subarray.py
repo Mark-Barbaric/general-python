@@ -8,7 +8,7 @@ def max_ave_subarray1(nums: list[int], k: int) -> float:
     Returns:
         float: _description_
     """
-    ans = 0.0
+    ans: int = 0.0
 
     if len(nums) == 0:
         return ans

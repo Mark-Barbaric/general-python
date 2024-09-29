@@ -2,7 +2,7 @@ def max_ones_with_flip(nums: list[int], k: int) -> int:
 
     left = 0
     right = 0
-    ans = 0
+    ans: int = 0
 
     while right < len(nums):
 

@@ -1,5 +1,5 @@
 def trap_rain_water(heights: list[int]) -> int:
-    ans = 0
+    ans: int = 0
 
     for i in range(1, len(heights)-1):
         maxL, maxR = 0, 0
@@ -16,7 +16,7 @@ def trap_rain_water(heights: list[int]) -> int:
 
 
 def trap_rain_water_dp(heights: list[int]) -> int:
-    ans = 0
+    ans: int = 0
     leftMax = [0 for _ in range(len(heights))]
     rightMax = [0 for _ in range(len(heights))]
 
