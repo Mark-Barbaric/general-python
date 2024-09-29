@@ -8,5 +8,5 @@ def test_inorder_traversal():
     root.right = TreeNode(7)
     ans: list[int] = 0
     recursive_inorder_traversal(root, ans)
-    expected_ans = [3, 5, 7]
+    expected_ans: list[int] = [3, 5, 7]
     assert sorted(ans) == sorted(expected_ans)

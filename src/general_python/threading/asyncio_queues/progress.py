@@ -3,7 +3,7 @@ import random
 import time
 
 
-async def worker(name, queue):
+async def worker(name: str, queue: asyncio.Queue):
     while True:
         # Get a "work item" out of the queue.
         sleep_for = await queue.get()
@@ -22,7 +22,7 @@ async def main():
     queue = asyncio.Queue()
 
     # Generate random timings and put them into the queue.
-    total_sleep_time = 0
+    total_sleep_time = 0.0
     for _ in range(20):
         sleep_for = random.uniform(0.05, 1.0)
         total_sleep_time += sleep_for

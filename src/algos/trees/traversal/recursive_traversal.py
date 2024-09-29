@@ -7,8 +7,8 @@ def recursive_preorder_traversal(root: Optional[TreeNode], nums: list[int]):
         return
 
     nums.append(root.val)
-    recursive_preorder_traversal(root.left)
-    recursive_preorder_traversal(root.right)
+    recursive_preorder_traversal(root.left, nums)
+    recursive_preorder_traversal(root.right, nums)
 
 
 def recursive_inorder_traversal(root: Optional[TreeNode], nums: list[int]):
