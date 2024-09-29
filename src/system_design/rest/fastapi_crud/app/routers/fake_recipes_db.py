@@ -1,7 +1,7 @@
 from typing import Optional
 from enum import Enum
 from uuid import UUID
-from ..model import RecipeModel, PublishStatus
+from ..domain import RecipeModel, PublishStatus
 
 
 RECIPES_DB: list[RecipeModel] = [
