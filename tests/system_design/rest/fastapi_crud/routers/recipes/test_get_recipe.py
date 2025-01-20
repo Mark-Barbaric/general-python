@@ -10,7 +10,8 @@ def test_get_items(test_fast_api_client):
 def test_get_item_200(test_fast_api_client):
     res = test_fast_api_client.get('/recipes/00000000-0000-0000-0000-000000000001')
     assert res.status_code == 200
-    assert res.json() == RECIPES_DB[0]
+    res_json = res.json()
+    assert res_json == RECIPES_DB[0]
 
 
 def test_get_item_400(test_fast_api_client):

@@ -1,14 +1,21 @@
-[tool.pytest.ini_options]
-pythonpath='.'
-testpaths='tests'
-
-
 [tool.poetry]
 name = "general-python"
 version = "0.1.0"
 description = ""
 authors = ["Mark Barbaric <markantonybarbaric@hotmail.com>"]
 readme = "README.md"
+
+[tool.pytest.ini_options]
+pythonpath=[
+    "."
+]
+testpaths=[
+    "tests"
+]
+addopts=[
+    "--ignore=.venv/",
+    "--ignore=workbooks/",
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -25,6 +32,7 @@ asyncio = "^3.4.3"
 flask-sqlalchemy = "^3.1.1"
 mysql-connector-python = "^9.0.0"
 sqlalchemy = "^2.0.32"
+flake8 = "^7.1.1"
 
 [tool.poetry.group.jupyter.dependencies]
 matplotlib = "^3.9.2"
