@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: pytest",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd":"${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "."
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "module": "pytest",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Python Debugger: Flask SQL Alchemy",
             "type": "debugpy",
             "request": "launch",
