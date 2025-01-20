@@ -3,6 +3,7 @@
     "python.testing.pytestEnabled": true,
     "python.testing.cwd": "${workspaceFolder}",
     "python.experiments.enabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.experiments.optInto": ["pythonTestAdapter"],
     "python.testing.pytestArgs": [
         "--rootdir=${workspaceFolder}",
