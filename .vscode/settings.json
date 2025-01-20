@@ -1,7 +1,11 @@
 {
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}",
     "python.experiments.enabled": true,
     "python.experiments.optInto": ["pythonTestAdapter"],
-    "pythonTestExplorer.testFramework": "pytest"
+    "python.testing.pytestArgs": [
+        "--rootdir=${workspaceFolder}",
+        "tests"
+    ]
 }
